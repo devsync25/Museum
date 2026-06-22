@@ -1,3 +1,30 @@
+@import 'utils/vars';
+@import 'utils/mixins';
+
 h1 {
   @extend %h1;
+
+  @include tablet {
+    font-size: 54px;
+  }
+
+  @include desktop {
+    font-size: 72px;
+  }
+}
+
+h2 {
+  @extend %h2;
+
+  @include tablet {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  @extend %h3;
+
+  @include tablet {
+    font-size: 36px;
+  }
 }

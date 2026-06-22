@@ -1,7 +1,16 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks/header';
+@import 'blocks/menu';
 
 body {
-  background: $c-gray;
+  scroll-behavior: smooth;
+  margin: 0;
+  font-family: $ff-second;
+  background: $c-white;
+}
+
+* {
+  box-sizing: border-box;
 }

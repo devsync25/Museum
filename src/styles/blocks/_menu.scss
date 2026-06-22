@@ -1,0 +1,132 @@
+.menu {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  transform: translateX(100%);
+
+  overflow-y: auto;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: $c-green;
+
+  transition: transform 0.3s ease;
+
+  @include content-padding-inline;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__close {
+    cursor: pointer;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    color: $c-white;
+
+    background: none;
+
+    @include hover(opacity, 0.6);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: $c-white;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 28px;
+
+    margin: 0;
+    padding: 0 0 24px;
+
+    list-style: none;
+  }
+
+  &__link {
+    font-family: $ff-main;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: $c-white;
+    text-decoration: none;
+
+    @include hover(opacity, 0.6);
+  }
+
+  &__schedule {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-top: 24px;
+    border-top: 1px solid rgba($c-white, 0.2);
+  }
+
+  &__schedule-title {
+    margin: 0 0 20px;
+
+    font-family: $ff-second;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $c-white;
+  }
+
+  &__schedule-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__schedule-time,
+  &__schedule-day {
+    margin-bottom: 4px;
+
+    font-family: $ff-second;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $c-white;
+  }
+
+  &__schedule-time {
+    font-weight: 700;
+  }
+
+  &__schedule-day {
+    font-weight: 400;
+  }
+
+  &__schedule-note {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    margin: 16px 0 0;
+
+    font-family: $ff-second;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $c-white;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: 24px 1fr 1fr;
+  column-gap: 28px;
+  align-items: start;
+}
