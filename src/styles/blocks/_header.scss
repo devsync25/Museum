@@ -1,12 +1,17 @@
 .header {
-  @include page-grid;
-
-  grid-column: 1 / -1;
-
   &__content {
     @include page-grid;
 
     position: relative;
+    align-items: stretch;
+
+    @include tablet-small {
+      min-height: 384px;
+    }
+
+    @include desktop {
+      min-height: 655px;
+    }
   }
 
   &__top {
@@ -18,6 +23,10 @@
     left: 0;
 
     padding-top: 27px;
+
+    @include tablet {
+      padding-top: 40px;
+    }
   }
 
   &__burger {
@@ -59,19 +68,81 @@
     color: $c-text-deep-black;
     text-align: center;
     text-decoration: none;
+
+    @include tablet-small {
+      grid-column: 4 / 6;
+      margin-top: 15px;
+      font-size: 36px;
+    }
+
+    @include tablet {
+      grid-column: 4 / 6;
+      margin-top: 15px;
+      font-size: 36px;
+    }
+
+    @include desktop {
+      grid-column: 6 / 8;
+    }
   }
+
   &__bottom {
-    @include content-padding-inline;
+    grid-column: 1 / -1;
+
+    @include tablet-small {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      align-items: center;
+      margin-top: 127px;
+    }
+
+    @include tablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      align-items: center;
+      margin-top: 127px;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+      place-items: center end;
+      margin-top: 206px;
+    }
   }
 
   &__image {
-    display: block;
+    overflow: hidden;
+    grid-column: 1 / -1;
 
     aspect-ratio: 320 / 300;
-    width: 100%;
+    width: 100vw;
+    width: calc(100% + 2 * $container-padding-mobile);
     height: 100%;
+    margin-right: calc((100vw - 100%) / -2);
+    margin-inline: -$container-padding-mobile;
 
-    object-fit: cover;
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    @include tablet-small {
+      grid-column: 4 / 7;
+      grid-row: 1;
+      aspect-ratio: 374 / 384;
+      width: auto;
+    }
+
+    @include desktop {
+      grid-column: 6 / 13;
+      aspect-ratio: 725 / 655;
+      width: auto;
+    }
   }
 
   &__title {
@@ -79,6 +150,22 @@
 
     margin: 20px 0;
     text-align: center;
+
+    @include tablet-small {
+      margin: 0 0 38px;
+      font-size: 44px;
+      text-align: start;
+    }
+
+    @include tablet {
+      font-size: 54px;
+      line-height: 120%;
+    }
+
+    @include desktop {
+      margin: 0 0 89px;
+      font-size: 72px;
+    }
   }
 
   &__btn {
@@ -92,6 +179,13 @@
     text-decoration: none;
 
     @include hover(opacity, 0.7);
+    @include hover(background-color, $c-green);
+
+    @include tablet-small {
+      width: 270px;
+      height: 70px;
+      margin-bottom: 20px;
+    }
   }
 
   &__btn-text {
@@ -102,10 +196,13 @@
 
     height: 100%;
 
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
     color: $c-text-deep-black;
-    letter-spacing: 0.08em;
+    letter-spacing: 0%;
+
+    @include hover(color, $c-white);
   }
 
   &__btn-icon {
@@ -123,9 +220,58 @@
       height: 24px;
       color: $c-white;
     }
+
+    @include tablet-small {
+      width: 70px;
+      height: 70px;
+    }
   }
 
-  &__events {
+  .header__events {
     display: none;
+
+    @include desktop {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+
+      text-decoration: none;
+
+      &::after {
+        content: '';
+
+        display: block;
+
+        width: 1px;
+        height: 70px;
+
+        background-color: $c-green;
+      }
+
+      span {
+        transform: rotate(-90deg);
+
+        display: inline-block;
+
+        margin-bottom: 20px;
+
+        font-family: $ff-main;
+        font-size: 14px;
+        font-weight: 700;
+        color: $c-text-dark-gray;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }

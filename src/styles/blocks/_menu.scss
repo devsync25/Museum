@@ -2,21 +2,44 @@
   position: fixed;
   z-index: 200;
   inset: 0;
-  transform: translateX(100%);
+  transform: translateY(-100%);
 
   overflow-y: auto;
 
-  padding-top: 27px;
-  padding-bottom: 27px;
-
-  background-color: $c-green;
-
   transition: transform 0.3s ease;
 
-  @include content-padding-inline;
-
   &.is-open {
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 28px;
+    align-items: start;
+
+    @include content-padding-inline;
+
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    background-color: $c-green;
+
+    @include tablet-small {
+      grid-template-columns: auto 1fr 1fr 1fr;
+      column-gap: 10px;
+    }
+
+    @include tablet {
+      column-gap: 38px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @include desktop {
+      grid-template-columns: auto 1fr 1fr 1fr;
+      column-gap: 102px;
+    }
   }
 
   &__close {
@@ -44,7 +67,7 @@
 
   &__list {
     display: grid;
-    grid-column: 2 / 4;
+    grid-column: 2;
     grid-row: 1;
     grid-template-columns: 1fr 1fr;
     gap: 24px 28px;
@@ -53,6 +76,15 @@
     padding: 0 0 24px;
 
     list-style: none;
+
+    @include tablet-small {
+      grid-column: 2;
+    }
+
+    @include desktop {
+      grid-column: 2;
+      gap: 31px 30px;
+    }
   }
 
   &__link {
@@ -71,6 +103,29 @@
     grid-row: 2;
     padding-top: 24px;
     border-top: 1px solid rgba($c-white, 0.2);
+
+    @include tablet-small {
+      display: grid;
+      grid-column: 3 / -1;
+      grid-row: 1;
+      grid-template-columns: 1fr 1fr;
+
+      padding-top: 0;
+      padding-left: 28px;
+      border-top: none;
+      border-left: 1px solid rgba($c-white, 0.2);
+    }
+
+    @include tablet {
+      padding-left: 38px;
+    }
+
+    @include desktop {
+      grid-column: 3 / -1;
+      grid-template-columns: repeat(2, 170px);
+      column-gap: 30px;
+      padding-left: 102px;
+    }
   }
 
   &__schedule-title {
@@ -80,6 +135,10 @@
     font-size: 14px;
     line-height: 1.4;
     color: $c-white;
+
+    @include tablet-small {
+      grid-column: 1 / -1;
+    }
   }
 
   &__schedule-list {
@@ -107,9 +166,6 @@
   }
 
   &__schedule-note {
-    grid-column: 1 / -1;
-    grid-row: 3;
-
     margin: 16px 0 0;
 
     font-family: $ff-second;
@@ -118,15 +174,13 @@
     line-height: 1.5;
     color: $c-white;
 
+    @include tablet-small {
+      grid-column: 2;
+      margin: 0;
+    }
+
     strong {
       font-weight: 700;
     }
   }
-}
-
-.menu-content {
-  display: grid;
-  grid-template-columns: 24px 1fr 1fr;
-  column-gap: 28px;
-  align-items: start;
 }

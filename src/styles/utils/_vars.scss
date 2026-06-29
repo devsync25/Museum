@@ -19,13 +19,15 @@ $ff-third: 'Roboto', sans-serif;
 
 // ---------- Breakpoints ----------------
 $bp-mobile: 320px;
-$bp-tablet: 640px;
+$bp-tablet-small: 640px;
+$bp-tablet: 768px;
 $bp-desktop: 1280px;
 $bp-design: 1440px;
 
 // ---------- Spacing ----------------
 $container-max-width: 1280px;
 $container-padding-mobile: 20px;
+$container-padding-tablet-small: 40px;
 $container-padding-tablet: 40px;
 $container-padding-desktop: 55px;
 

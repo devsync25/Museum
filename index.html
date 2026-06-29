@@ -17,8 +17,8 @@
 
   <body class="page__body">
     <!-- #region header + menu -->
-    <div class="container">
-      <header class="header header__container">
+    <header class="header header__container">
+      <div class="container">
         <div class="header__content">
           <div class="header__top">
             <button
@@ -71,114 +71,112 @@
               href="#events"
               class="header__events"
             >
-              ПОДІЇ
+              <span>ПОДІЇ</span>
             </a>
           </div>
         </div>
-      </header>
-      <!-- #endregion -->
+      </div>
+    </header>
+    <!-- #endregion -->
 
-      <!-- #region aside -->
-      <aside
-        class="menu"
-        id="menu"
-      >
-        <div class="container">
-          <div class="menu-content">
-            <button
-              class="menu__close"
-              id="menu-close"
+    <!-- #region aside -->
+    <aside
+      class="menu"
+      id="menu"
+    >
+      <div class="menu__inner">
+        <button
+          class="menu__close"
+          id="menu-close"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
+            ></path>
+          </svg>
+        </button>
+
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a
+              href="#gallery"
+              class="menu__link"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
-                ></path>
-              </svg>
-            </button>
+              Галерея
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              href="#subscription"
+              class="menu__link"
+            >
+              Про Нас
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              href="#events"
+              class="menu__link"
+            >
+              Виставки та події
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              href="#footer"
+              class="menu__link"
+            >
+              Контакти
+            </a>
+          </li>
+        </ul>
 
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a
-                  href="#gallery"
-                  class="menu__link"
-                >
-                  Галерея
-                </a>
-              </li>
-              <li class="menu__item">
-                <a
-                  href="#subscription"
-                  class="menu__link"
-                >
-                  Про Нас
-                </a>
-              </li>
-              <li class="menu__item">
-                <a
-                  href="#events"
-                  class="menu__link"
-                >
-                  Виставки та події
-                </a>
-              </li>
-              <li class="menu__item">
-                <a
-                  href="#footer"
-                  class="menu__link"
-                >
-                  Контакти
-                </a>
-              </li>
-            </ul>
+        <div class="menu__schedule">
+          <p class="menu__schedule-title">Графік роботи</p>
 
-            <div class="menu__schedule">
-              <p class="menu__schedule-title">Графік роботи</p>
+          <ul class="menu__schedule-list">
+            <li class="menu__schedule-item">
+              <strong class="menu__schedule-time">12:00 — 20:00</strong>
+              <span class="menu__schedule-day">середа</span>
+            </li>
+            <li class="menu__schedule-item">
+              <strong class="menu__schedule-time">12:00 — 20:00</strong>
+              <span class="menu__schedule-day">четвер</span>
+            </li>
+            <li class="menu__schedule-item">
+              <strong class="menu__schedule-time">12:00 — 20:00</strong>
+              <span class="menu__schedule-day">п’ятниця</span>
+            </li>
+            <li class="menu__schedule-item">
+              <strong class="menu__schedule-time">11:00 — 19:00</strong>
+              <span class="menu__schedule-day">субота</span>
+            </li>
+            <li class="menu__schedule-item">
+              <strong class="menu__schedule-time">11:00 — 19:00</strong>
+              <span class="menu__schedule-day">неділя</span>
+            </li>
+          </ul>
 
-              <ul class="menu__schedule-list">
-                <li class="menu__schedule-item">
-                  <strong class="menu__schedule-time">12:00 — 20:00</strong>
-                  <span class="menu__schedule-day">середа</span>
-                </li>
-                <li class="menu__schedule-item">
-                  <strong class="menu__schedule-time">12:00 — 20:00</strong>
-                  <span class="menu__schedule-day">четвер</span>
-                </li>
-                <li class="menu__schedule-item">
-                  <strong class="menu__schedule-time">12:00 — 20:00</strong>
-                  <span class="menu__schedule-day">п’ятниця</span>
-                </li>
-                <li class="menu__schedule-item">
-                  <strong class="menu__schedule-time">11:00 — 19:00</strong>
-                  <span class="menu__schedule-day">субота</span>
-                </li>
-                <li class="menu__schedule-item">
-                  <strong class="menu__schedule-time">11:00 — 19:00</strong>
-                  <span class="menu__schedule-day">неділя</span>
-                </li>
-              </ul>
-            </div>
-
-            <p class="menu__schedule-note">
-              <strong>Вихідні:</strong>
-              понеділок, вівторок
-              <br />
-              Каса припиняє роботу за 1 годину до закриття музею
-            </p>
-          </div>
+          <p class="menu__schedule-note">
+            <strong>Вихідні:</strong>
+            понеділок, вівторок
+            <br />
+            Каса припиняє роботу за 1 годину до закриття музею
+          </p>
         </div>
-      </aside>
+      </div>
+    </aside>
+    <!-- #endregion -->
+
+    <main class="main">
+      <!-- #region current-events -->
+
       <!-- #endregion -->
-
-      <main class="main">
-        <!-- #region current-events -->
-
-        <!-- #endregion -->
-      </main>
-    </div>
+    </main>
 
     <script src="src/scripts/main.js"></script>
   </body>

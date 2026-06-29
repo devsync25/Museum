@@ -14,3 +14,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+
+  @include content-padding-inline;
+}
